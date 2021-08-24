@@ -1,12 +1,7 @@
-import PropTypes from 'prop-types';
-import Book from './BookAction';
-
-const Books = ({ books }) => (
-  <ul>{books.map((book) => <li key={book.title}><Book book={book} /></li>)}</ul>
-);
-
-Books.propTypes = {
-  books: PropTypes.arrayOf(Book.propTypes.book).isRequired,
-};
-
-export default Books;
+export default function Books() {
+  return (
+    <div>
+      <h3>All Books</h3>
+    </div>
+  );
+}
