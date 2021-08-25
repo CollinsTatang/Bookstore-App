@@ -17,13 +17,16 @@ export default function Books() {
     setAuthor(e.target.value);
   };
 
-  const submitToBookStore = () => {
+  const submitToBookStore = (event) => {
+    event.preventDefault();
     const newBook = {
       id: UUID(),
       title,
       author,
     };
     dispatch(addBook(newBook));
+    setTitle('');
+    setAuthor('');
   };
 
   const deleteBookFromStore = (e) => {
@@ -43,15 +46,15 @@ export default function Books() {
           ))}
         </ul>
       </div>
-      <form>
+      <form onSubmit={submitToBookStore}>
         <h4>Add New Book</h4>
-        <input placeholder="Title" onChange={setBookTitle} />
+        <input placeholder="Title" value={title} required onChange={setBookTitle} />
         <br />
         <br />
-        <input placeholder="Author" onChange={setBookAuthor} />
+        <input placeholder="Author" value={author} required onChange={setBookAuthor} />
         <br />
         <br />
-        <button type="button" onClick={submitToBookStore}>Add Book</button>
+        <button type="submit">Add Book</button>
       </form>
     </div>
   );
