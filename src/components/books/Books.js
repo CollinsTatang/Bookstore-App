@@ -41,6 +41,8 @@ export default function Books() {
           { books.map((book) => (
             <li key={book.id}>
               <span className="">{book.title}</span>
+              <br />
+              <span className="">{book.author}</span>
               <button id={book.id} type="button" onClick={deleteBookFromStore}>Delete</button>
             </li>
           ))}
