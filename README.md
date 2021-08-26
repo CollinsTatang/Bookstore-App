@@ -2,7 +2,7 @@
 
 ![Microverse](https://img.shields.io/badge/Microverse-blueviolet)
 
-![Bookstore](bookstore.png)
+![Bookstore](book2.png)
 ## Learning objective
 - Understand the concept of state management.
 - Use store, actions and reducers in React.
