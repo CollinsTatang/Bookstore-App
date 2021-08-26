@@ -1,13 +1,21 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { v4 as UUID } from 'uuid';
-import { addBook, allBooks, removeBook } from '../../redux/books/books';
+import { createApp } from '../../api';
+import {
+  allBooks, addBookToStore, removeBookFromStore, fetchBooks,
+} from '../../redux/books/books';
 
 export default function Books() {
   const dispatch = useDispatch();
   const books = useSelector(allBooks);
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
+
+  useEffect(async () => {
+    await createApp();
+    dispatch(fetchBooks);
+  }, [createApp]);
 
   const setBookTitle = (e) => {
     setTitle(e.target.value);
@@ -17,20 +25,18 @@ export default function Books() {
     setAuthor(e.target.value);
   };
 
-  const submitToBookStore = (event) => {
-    event.preventDefault();
+  const submitToBookStore = () => {
     const newBook = {
       id: UUID(),
       title,
       author,
+      category: '',
     };
-    dispatch(addBook(newBook));
-    setTitle('');
-    setAuthor('');
+    dispatch(addBookToStore(newBook));
   };
 
   const deleteBookFromStore = (e) => {
-    dispatch(removeBook({ id: e.target.id }));
+    dispatch(removeBookFromStore({ id: e.target.id }));
   };
 
   return (
@@ -41,22 +47,20 @@ export default function Books() {
           { books.map((book) => (
             <li key={book.id}>
               <span className="">{book.title}</span>
-              <br />
-              <span className="">{book.author}</span>
               <button id={book.id} type="button" onClick={deleteBookFromStore}>Delete</button>
             </li>
           ))}
         </ul>
       </div>
-      <form onSubmit={submitToBookStore}>
+      <form>
         <h4>Add New Book</h4>
-        <input placeholder="Title" value={title} required onChange={setBookTitle} />
+        <input placeholder="Title" onChange={setBookTitle} />
         <br />
         <br />
-        <input placeholder="Author" value={author} required onChange={setBookAuthor} />
+        <input placeholder="Author" onChange={setBookAuthor} />
         <br />
         <br />
-        <button type="submit">Add Book</button>
+        <button type="button" onClick={submitToBookStore}>Add Book</button>
       </form>
     </div>
   );
