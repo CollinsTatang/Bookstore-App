@@ -39,7 +39,7 @@
   height: 1.125rem;
   margin: 0 2.438rem 0 0;
   opacity: 0.5;
-  font-family: Montserrat;
+  font-family: 'Montserrat', sans-serif;
   font-size: 0.875rem;
   font-weight: bold;
   font-stretch: normal;
@@ -52,7 +52,7 @@
   width: 12.313rem;
   height: 1.813rem;
   margin: 0.188rem 20.188rem 0 0;
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab', serif;
   font-size: 1.375rem;
   font-weight: bold;
   font-stretch: normal;
@@ -65,7 +65,7 @@
   width: 6.688rem;
   height: 1.188rem;
   margin: 0.25rem 0 0;
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab', serif;
   font-size: 0.875rem;
   font-weight: 300;
   font-stretch: normal;
@@ -76,13 +76,12 @@
 }
 
 .book-link {
-  font-family: 'RobotoSlab';
+  font-family: 'RobotoSlab', serif;
   font-size: 0.875rem;
   font-weight: 300;
   color: #4386bf;
   text-decoration: none;
 }
-
 
 .progress-oval {
   position: relative;
