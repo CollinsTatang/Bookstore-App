@@ -50,7 +50,7 @@ export default function Books() {
           { books.map((book) => (
             <div className="book-panel bg-white d-flex align-items-center justify-content-between" key={book.id}>
               <div className="d-inline-flex flex-column">
-                <span className="book-genre">Genre</span>
+                <span className="book-genre">Action</span>
                 <span className="book-title">{book.title}</span>
                 <span className="book-author">{book.author}</span>
                 <span className="d-inline-block">
