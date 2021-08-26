@@ -33,6 +33,10 @@ export default function Books() {
       category: '',
     };
     dispatch(addBookToStore(newBook));
+    const clearTitle = document.getElementById('clear-title');
+    clearTitle.value = '';
+    const clearAuthor = document.getElementById('clear-author');
+    clearAuthor.value = '';
   };
 
   const deleteBookFromStore = (e) => {
@@ -40,27 +44,46 @@ export default function Books() {
   };
 
   return (
-    <div>
-      <h3>All Books</h3>
+    <div className="app-container">
       <div>
-        <ul>
+        <div>
           { books.map((book) => (
-            <li key={book.id}>
-              <span className="">{book.title}</span>
-              <button id={book.id} type="button" onClick={deleteBookFromStore}>Delete</button>
-            </li>
+            <div className="book-panel bg-white d-flex align-items-center justify-content-between" key={book.id}>
+              <div className="d-inline-flex flex-column">
+                <span className="book-genre">Action</span>
+                <span className="book-title">{book.title}</span>
+                <span className="book-author">{book.author}</span>
+                <span className="d-inline-block">
+                  <button id={book.id} type="button" className="btn btn-link border-end book-link ps-0">Comments</button>
+                  <button id={book.id} type="button" className="btn btn-link border-end book-link" onClick={deleteBookFromStore}>Remove</button>
+                  <button id={book.id} type="button" className="btn btn-link book-link">Edit</button>
+                </span>
+              </div>
+
+              <div className="d-flex">
+                <div className="d-flex align-items-center border-end">
+                  <div className="progress-oval d-inline-block" />
+                  <span>
+                    <div className="percent-complete">64%</div>
+                    <div className="completed">Completed</div>
+                  </span>
+                </div>
+
+                <div className="d-flex flex-column">
+                  <div className="current-chapter">CURRENT CHAPTER</div>
+                  <div className="current-lesson">Chapter 17</div>
+                  <button type="button" className="btn btn-update">UPDATE PROGRESS</button>
+                </div>
+              </div>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
-      <form>
-        <h4>Add New Book</h4>
-        <input placeholder="Title" onChange={setBookTitle} />
-        <br />
-        <br />
-        <input placeholder="Author" onChange={setBookAuthor} />
-        <br />
-        <br />
-        <button type="button" onClick={submitToBookStore}>Add Book</button>
+      <form className="add-book-form">
+        <span className="add-new-book">ADD NEW BOOK</span>
+        <input id="clear-title" placeholder="Book Title" onChange={setBookTitle} className="book-title-input" />
+        <input id="clear-author" placeholder="Author" onChange={setBookAuthor} className="book-category-input" />
+        <button type="button" className="btn add-book-button" onClick={submitToBookStore}>ADD BOOK</button>
       </form>
     </div>
   );
