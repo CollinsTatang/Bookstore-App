@@ -30,6 +30,8 @@
 
 - React.Js
 - Redux
+  
+  [Live Link](https://focused-wilson-b3704e.netlify.app/)
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
