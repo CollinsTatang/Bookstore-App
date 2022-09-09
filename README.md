@@ -31,7 +31,7 @@
 - React.Js
 - Redux
   
-  [Live Link](https://celadon-croquembouche-384ba6.netlify.app/books)
+  [Live Link](https://celadon-croquembouche-384ba6.netlify.app/)
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
