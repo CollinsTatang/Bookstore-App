@@ -1,38 +1,199 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600;700&family=Roboto+Slab:wght@300;400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+.header-text {
+  font-family: 'Montserrat', sans-serif;
+  color: #0290ff;
+  font-size: 1.875rem;
+  margin: 0;
+  padding-right: 2.563rem;
+}
+
+.link {
+  text-decoration: none;
+  color: gray;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.813rem;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 1.9px;
+  margin: 0 2.563rem 0 0;
+}
+
+.link:hover {
+  color: black;
+}
+
+.book-panel {
+  width: 75rem;
+  margin: auto;
+  margin-top: 1.25rem;
+  box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid #e8e8e8;
+  padding: 1.5rem;
+}
+
+.book-genre {
+  width: 3.063rem;
+  height: 1.125rem;
+  margin: 0 2.438rem 0 0;
+  opacity: 0.5;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.875rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+.book-title {
+  width: 12.313rem;
+  height: 1.813rem;
+  margin: 0.188rem 20.188rem 0 0;
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.375rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.2px;
+}
+
+.book-author {
+  width: 6.688rem;
+  height: 1.188rem;
+  margin: 0.25rem 0 0;
+  font-family: 'Roboto Slab', serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
+}
+
+.book-link {
+  font-family: 'RobotoSlab', serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: #4386bf;
+  text-decoration: none;
+}
+
+.progress-oval {
+  position: relative;
+  border: 4px solid;
+  width: 4.25rem;
+  height: 4.25rem;
+  border-right-color: #307bbe;
+  border-left-color: white;
+  border-top-color: #307bbe;
+  border-bottom-color: #379cf6;
+  transform: rotate(30deg);
+  border-radius: 50%;
+}
+
+.percent-complete {
+  width: 4.25rem;
+  height: 2.438rem;
+  margin: 0.063rem 5.75rem 0 0.688rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  font-weight: lighter;
+}
+
+.completed {
+  width: 5rem;
+  height: 1.125rem;
+  margin: 0.438rem 4.938rem 0.75rem 0.75rem;
+  opacity: 0.5;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.875rem;
+  font-weight: normal;
+}
+
+.current-chapter {
+  width: 7.875rem;
+  height: 1.125rem;
+  margin: 0.063rem 3.625rem 0 3.688rem;
+  opacity: 0.5;
+  font-family: 'RobotoSlab', serif;
+  font-size: 0.813rem;
+  font-weight: 300;
+}
+
+.current-lesson {
+  width: 4.688rem;
+  height: 1.313rem;
+  margin: 0.438rem 6.813rem 0.25rem 3.688rem;
+  font-family: 'RobotoSlab', serif;
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: -0.4px;
+}
+
+.btn-update {
+  width: 11.5rem;
+  height: 2.063rem;
+  margin: 0.75rem 0 0.563rem 3.688rem;
+  padding: 0.438rem 1.188rem 0.5rem 1.375rem;
+  border-radius: 3px;
+  background-color: #0290ff;
+  font-family: 'RobotoSlab', serif;
+  font-size: 0.813rem;
+  font-weight: 300;
+  letter-spacing: 0.5px;
   text-align: center;
+  color: #fff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.add-new-book {
+  width: 10.875rem;
+  height: 1.5rem;
+  margin: 1.813rem 32.75rem 1.188rem 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.25rem;
+  letter-spacing: -0.18px;
+  color: #888;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.add-book-form {
+  width: 75rem;
+  border-top: solid 2px #e8e8e8;
+  margin: auto;
+  margin-top: 20px;
+  padding-top: 20px;
+  margin-bottom: 50px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.book-title-input {
+  width: 41.5rem;
+  height: 2.813rem;
+  padding: 0.813rem 1.063rem 0.813rem 1.063rem;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
 }
 
-.App-link {
-  color: #61dafb;
+.book-category-input {
+  width: 17.813rem;
+  height: 2.813rem;
+  padding: 0.813rem 1.063rem 0.813rem 1.063rem;
+  margin: 1.188rem 2.125rem;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.add-book-button {
+  width: 11rem;
+  height: 2.813rem;
+  padding: 0.801rem 1.188rem 0.886rem 1.375rem;
+  border-radius: 3px;
+  background-color: #0290ff;
+  font-family: 'RobotoSlab', serif;
+  font-size: 0.813rem;
+  letter-spacing: 0.5px;
+  color: #fff;
 }
